@@ -1,0 +1,46 @@
+{% extends "reviews/base.html" %}
+{% block content_movies %}
+	<main role="main" class="container">
+		<div id="content" class="site-body">
+			<section>
+
+				<div id="content1">
+					<ul class="nav-yr">
+						<li class="nav-yr-contents">
+							<a href="{% url 'reviews-movies-2020' %}" class="year-link">2020</a>
+					    	<a href="{% url 'reviews-movies-2019' %}" class="year-link">2019</a>
+					    	<a href="{% url 'reviews-movies-2018' %}" class="year-link">2018</a>
+					    	<a href="{% url 'reviews-movies-2017' %}" class="year-link">2017</a>
+					    	<a href="{% url 'reviews-movies-2016' %}" class="year-link">2016</a>
+						</li>
+					</ul>
+						
+					    {% block content_2020 %}{% endblock %}
+					    {% block content_2019 %}{% endblock %}
+						
+				</div>
+				
+			</section>
+		</div>
+	</main>
+
+
+	<section class="pop-section">
+		<div>
+			<h1>- POPULAR MOVIES -</h1>
+			<ul class = "pop-movies">
+				<li class="pop-list"><a href="/movie_detail/26/" class="nav-link"><img src="https://lh3.googleusercontent.com/proxy/ommQ5cA_NVsNQckGxc2N5AbL516EXmUks_PK_Cqdtr-Ct1UYJTm4JNqm3YopiY1yafE9JBZhQV9T0JhfXRbecYTGrkrilxlIKQXGg5WdCOM2IVKOIFvFbgmnNw" alt="Shawshank Redemption" class="pop-img"></a></li>
+				<li class="pop-list"><a href="/movie_detail/27/" class="nav-link"><img src="https://www.limitedruns.com/media/cache/d5/47/d547564a0e56da9511ae32e497fde908.jpg" alt="Pulp Fiction" class="pop-img"></a></li>
+				<li class="pop-list"><a href="/movie_detail/28/" class="nav-link"><img src="https://mypostercollection.com/wp-content/uploads/2018/08/The-Dark-Knight-Poster-2018-MyPosterCollection.com-1.jpg" alt="The Dark Knight" class="pop-img"></a></li>
+				<li class="pop-list"><a href="/movie_detail/29/" class="nav-link"><img src="https://lh3.googleusercontent.com/proxy/yGxYC9GjfLXpfXWBJnXnVj_NxaQW6ShSlFsoD9mH6pQTyhJuO9pN37XGL9dPRvXN04APbwtNR9LY53kKcor_b26B-H8wUxk9X75t1jzafS-r-pHPZx55HAOaAWxndKJuv0_eQGB4h_iH1B-NijzG" alt="Star Wars: The Force Awakens" class="pop-img"></a></li>
+				<li class="pop-list"><a href="/movie_detail/30/" class="nav-link"><img src="https://i.pinimg.com/originals/71/e7/38/71e7380618bde0071abdc2449ac87068.jpg" alt="Harry Potter and the Deathly Hallows Part 2" class="pop-img"></a></li>
+				<li class="pop-list"><a href="/movie_detail/31/" class="nav-link"><img src="https://cdn.collider.com/wp-content/uploads/2010/06/inception-movie-poster-7.jpg" alt="Inception" class="pop-img"></a></li>
+				<li class="pop-list"><a href="/movie_detail/32/" class="nav-link"><img src="https://i.pinimg.com/originals/c6/d4/e2/c6d4e2803a467b99ede238fee57441a7.jpg" alt="Interstellar" class="pop-img"></a></li>
+				<li class="pop-list"><a href="/movie_detail/33/" class="nav-link"><img src="https://i.pinimg.com/originals/40/b4/21/40b421c7cfe1b3059d5e50d79e968270.jpg" alt="The Godfather" class="pop-img"></a></li>
+			</ul>
+		</div>
+	</section>
+{% endblock content_movies %}
+
+	
+

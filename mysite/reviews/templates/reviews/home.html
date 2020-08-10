@@ -1,0 +1,157 @@
+{% extends "reviews/base.html" %}
+
+{% block content %}
+
+<main role="main" class="container">
+		
+		<div class="row">
+			<div>
+			{% block content_1 %}
+					
+					<!--Images-->
+					<div class="row">
+						<div class="movies">
+							<ul class="movies-main">
+							    <a href="/movie_detail/1/" class="nav-link"><img src="https://images-na.ssl-images-amazon.com/images/I/81n5eExCJLL._AC_SL1500_.jpg" alt="Parasite" class="main-page"></a>
+							    <a href="/movie_detail/2/" class="nav-link"><img src="https://www.joblo.com/assets/images/joblo/posters/2019/03/avengers-endgame-poster-xl.jpg" alt="Avengers: Endgame" class="main-page"></a>
+							    <a href="/movie_detail/3/" class="nav-link"><img src="https://images-na.ssl-images-amazon.com/images/I/71H4EDEfcwL._AC_SL1500_.jpg" alt="JOKER" class="main-page"></a>
+							    <a href="/movie_detail/6/" class="nav-link"><img src="https://www.joblo.com/assets/images/joblo/posters/2020/03/1.jpg" alt="Scoob" class="main-page"></a>
+							    <a href="/movie_detail/4/" class="nav-link"><img src="https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_.jpg" alt="Knives Out" class="main-page"></a>
+							    <a href="/movie_detail/7/" class="nav-link"><img src="https://i2.wp.com/www.socialnews.xyz/wp-content/uploads/2020/05/22/tenet-movie-HD-Poster--scaled.jpg?quality=80&zoom=1&ssl=1" alt="Tenet" class="main-page"></a>
+							    <a href="/movie_detail/5/" class="nav-link"><img src="https://images-na.ssl-images-amazon.com/images/I/710H0wZePbL._AC_SL1334_.jpg" alt="Birds Of Prey" class="main-page"></a>
+							    <a href="/movie_detail/8/" class="nav-link"><img src="https://m.media-amazon.com/images/M/MV5BMjFlZjZkMTYtODM2Zi00OTM4LWIwYTktOTFjMmQzZDEzZDc4XkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_.jpg" alt="Mulan" class="main-page"></a>
+							    <a href="/movie_detail/9/" class="nav-link"><img src="https://images.moviesanywhere.com/40f09324712d744051c8a68a816c4164/c2a593f8-5a9d-4350-97ac-1837de8d11eb.jpg" alt="The Photograph" class="main-page"></a>   
+							</ul>
+
+							<!--<div class="deck">
+								<a href=""><img src="https://images-na.ssl-images-amazon.com/images/I/81n5eExCJLL._AC_SL1500_.jpg" alt="Parasite"></a>
+							</div>
+
+							<div class="deck">
+								<a href=""><img src="https://www.joblo.com/assets/images/joblo/posters/2019/03/avengers-endgame-poster-xl.jpg" alt="Avengers: Endgame"></a>
+							</div>
+
+							<div class="deck">
+								<a href=""><img src="https://images-na.ssl-images-amazon.com/images/I/71H4EDEfcwL._AC_SL1500_.jpg" alt="JOKER"></a>
+							</div>
+
+							<div class="deck">
+								<a href=""><img src="https://www.joblo.com/assets/images/joblo/posters/2020/03/1.jpg" alt="Scoob"></a>
+							</div>
+
+							<div class="deck">
+								<a href=""><img src="https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_.jpg" alt="Knives Out"></a>
+							</div>
+
+							<div class="deck">
+								<a href=""><img src="https://i2.wp.com/www.socialnews.xyz/wp-content/uploads/2020/05/22/tenet-movie-HD-Poster--scaled.jpg?quality=80&zoom=1&ssl=1" alt="Tenet"></a>
+							</div>
+
+							<div class="deck">
+								<a href=""><img src="https://images-na.ssl-images-amazon.com/images/I/710H0wZePbL._AC_SL1334_.jpg" alt="Birds Of Prey"></a>
+							</div>
+
+							<div class="deck">
+								<a href=""><img src="https://lh3.googleusercontent.com/proxy/3j7wxLitu9GSufatplFFHvcQUf-HUbeTC_rPa-XQ8aAL-b3reL7N5VyDtow5Lf-tTDe7WtvqwQeQj31xj3sL_a9VHDgCzJeMv_ib" alt="Mulan"></a>
+							</div>
+
+							<div class="deck">
+								<a href=""><img src="https://images.moviesanywhere.com/40f09324712d744051c8a68a816c4164/c2a593f8-5a9d-4350-97ac-1837de8d11eb.jpg" alt="The Photograph"></a>   
+							</div>-->
+
+						 </div>
+					</div>
+			{% endblock content_1 %}
+			</div>
+		</div>
+		
+		<div class="column left" id="main-content">
+
+			<!--<ul>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Movies</a></li>
+				<li><a href="#">Profile</a></li>
+			</ul>-->
+
+
+			{% block content_2 %}
+				<h2 id="latest-rev">- LATEST REVIEWS -</h2>
+				{% for review in reviews %}
+					<article class="media content-section">
+						<img class="rounded-circle article-img" src="{{ review.author.profile.image.url }}">
+						<div class="media-body">
+							<div class="article-metadata">
+								<a class="mr-2" href="{% url 'user-reviews' review.author.username %}">{{ review.author }}</a>
+								<small class="text-muted">{{ review.date_posted|date:"F d, Y" }}</small>
+							</div>
+							<h2 class="art-tit" style="color: #e1ad01">{{ review.movie }}</h2>
+							<p class="article-content">{{ review.content }}</p>
+							<img src="{{ movie.movie_poster.url }}">
+						</div>
+					</article>
+
+
+					<!--<div id="posts">
+						<h1>{{ review.movie_title }}</h1>
+						<p>By {{ review.author }} on {{ review.date_posted }}</p>
+						<p>{{ review.content }}</p>
+					</div>-->
+				{% endfor %}
+
+				{% if is_paginated %}
+
+					<div class="page-numbers">
+						{% if page_obj.has_previous %}
+							<a id="page" class="btn btn-outline-info mb-4" href="?page=1">First</a>
+							<a id="page" class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+						{% endif %}
+
+						{% for num in page_obj.paginator.page_range %}
+							{% if page_obj.number == num %}
+							  <a id="page" class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+							{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+							  <a id="page" class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+							{% endif %}
+						{% endfor %}
+
+						{% if page_obj.has_next %}
+							<a id="page" class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+							<a id="page" class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+						{% endif %}
+					</div>
+					
+
+				{% endif %}
+
+			{% endblock content_2 %}
+
+		</div>
+		
+
+		<div class="column right" id="sidebar">
+
+			{% block content_3 %}
+				<div class="side_content">
+				  	<h2 style="color: #e1ad01">Upcoming Movies</h2>
+				  	<hr>
+				  	<ul class="upcoming">
+				  		<li>Tesla</li>
+				  		<li>The New Mutants</li>
+				  		<li>The King's Man</li>
+				  		<li>Wonder Woman 1984</li>
+				  		<li>Black Widow</li>
+				  		<li>No Time to Die</li>
+				  		<li>The Tax Collector</li>
+				  		<li>The Personal History of David Copperfield</li>
+				  		<li>Sputnik</li>
+				  		<li>2 Hearts</li>
+				  		<li>Soul</li>
+				  		<li>Free Guy</li>
+			    </div>
+			{% endblock content_3 %}
+
+		</div>
+
+</main>
+
+{% endblock %}

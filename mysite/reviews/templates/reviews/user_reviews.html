@@ -1,0 +1,98 @@
+{% extends "reviews/base.html" %}
+
+{% block content %}
+
+<main role="main" class="container">
+		
+		
+		
+		<div class="column left" id="main-content">
+
+			<!--<ul>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Movies</a></li>
+				<li><a href="#">Profile</a></li>
+			</ul>-->
+
+
+			{% block content_2 %}
+				<h2 id="latest-rev">- REVIEWS BY {{ view.kwargs.username }} ({{ page_obj.paginator.count }}) -</h2>
+				{% for review in reviews %}
+					<article class="media content-section">
+						<img class="rounded-circle article-img" src="{{ review.author.profile.image.url }}">
+						<div class="media-body">
+							<div class="article-metadata">
+								<a class="mr-2" href="{% url 'user-reviews' review.author.username %}">{{ review.author }}</a>
+								<small class="text-muted">{{ review.date_posted|date:"F d, Y" }}</small>
+							</div>
+							<h2 class="art-tit" style="color: #e1ad01">{{ review.movie }}</h2>
+							<p class="article-content">{{ review.content }}</p>
+							<img src="{{ movie.movie_poster.url }}">
+						</div>
+					</article>
+
+
+					<!--<div id="posts">
+						<h1>{{ review.movie_title }}</h1>
+						<p>By {{ review.author }} on {{ review.date_posted }}</p>
+						<p>{{ review.content }}</p>
+					</div>-->
+				{% endfor %}
+
+				{% if is_paginated %}
+
+					<div class="page-numbers">
+						{% if page_obj.has_previous %}
+							<a id="page" class="btn btn-outline-info mb-4" href="?page=1">First</a>
+							<a id="page" class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+						{% endif %}
+
+						{% for num in page_obj.paginator.page_range %}
+							{% if page_obj.number == num %}
+							  <a id="page" class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+							{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+							  <a id="page" class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+							{% endif %}
+						{% endfor %}
+
+						{% if page_obj.has_next %}
+							<a id="page" class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+							<a id="page" class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+						{% endif %}
+					</div>
+					
+
+				{% endif %}
+
+			{% endblock content_2 %}
+
+		</div>
+		
+
+		<div class="column right" id="sidebar">
+
+			{% block content_3 %}
+				<div class="side_content">
+				  	<h2>Upcoming Movies</h2>
+				  	<hr>
+				  	<ul class="upcoming">
+				  		<li><a href="">Tesla</a></li>
+				  		<li><a href="">The New Mutants</a></li>
+				  		<li><a href="">The King's Man</a></li>
+				  		<li><a href="">Wonder Woman 1984</a></li>
+				  		<li><a href="">Black Widow</a></li>
+				  		<li><a href="">No Time to Die</a></li>
+				  		<li><a href="">The Tax Collector</a></li>
+				  		<li><a href="">The Personal History of David Copperfield</a></li>
+				  		<li><a href="">Sputnik</a></li>
+				  		<li><a href="">2 Hearts</a></li>
+				  		<li><a href="">Soul</a></li>
+				  		<li><a href="">Free Guy</a></li>
+			    </div>
+			{% endblock content_3 %}
+
+		</div>
+
+</main>
+
+{% endblock %}

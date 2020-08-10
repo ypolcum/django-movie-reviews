@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+
+	{% if title %}
+		<title> Movie Reviews - {{ title }}</title>
+	{% else %}
+		<title> Movie Reviews </title>
+	{% endif %}
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'reviews/main.css'%}">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<body>
+
+	<header>
+		<nav>
+			<input type="checkbox" id="check">
+			<label for="check" class="checkbtn">
+				<i class="fas fa-bars"></i>
+			</label>
+			<a href="{% url 'reviews-home' %}"><label class="logo">Movie Reviews</label></a>
+
+			<ul>
+				<li><a href="{% url 'reviews-byyear' %}" class="nav-link">Movies</a></li>
+
+				{% if user.is_authenticated %}
+					<li><a class="nav-link" href="{% url 'review-create' %}">New Review</a></li>
+					<li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+					<li><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+				{% else %}
+					<li><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+					<li><a href="{% url 'register' %}" class="nav-link">Register</a></li>
+				{% endif %}
+				
+			</ul>
+		</nav>
+	</header>
+
+	{% if messages %}
+		{% for message in messages %}
+			<div class="alert alert{{ message.tags }}">
+				{{ message }}
+			</div>
+		{% endfor %}
+	{% endif %}
+	{% block content %}
+	
+	<!--<main role="main" class="container">
+		
+		<div class="row">
+			<div>
+				{% block content_1 %}{% endblock %}
+			</div>
+		</div>
+		
+		<div class="column left" id="main-content">
+			{% block content_2 %}{% endblock %}
+		</div>
+		
+
+		<div class="column right" id="sidebar">
+			{% block content_3 %}{% endblock %}
+        </div>
+
+	</main>-->
+
+	{% endblock %}
+
+	{% block content_movies %}
+	{% endblock %}
+
+	
+</body>
+</html>

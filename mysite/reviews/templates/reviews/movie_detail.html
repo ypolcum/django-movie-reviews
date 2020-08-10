@@ -1,0 +1,24 @@
+{% extends "reviews/base.html" %}
+{% block content %}
+	<div id="movie-section" class="content-section">
+	  <div id="movie-media" class="media">
+	    <img class="movie_poster" src="{{ object.movie_poster.url }}">
+	    <div id="movie-text" class="media-body">
+	      	<h1 class="movie-heading" style="color: #e1ad01">{{ object.movie_title }}</h1>
+	      	<h3 class="director">{{ object.director }}</h3>
+	      	<br class="movie-break">
+	      	<p class="add-info">Release Date: {{ object.release_year|date:"F d, Y" }}</p>
+	      	<p class="add-info">Genre: {{ object.genre }}</p>
+	      	<p id="cast" class="add-info">{{ object.cast }}</p>
+	      	<br>
+	      	<br>
+	      	<br>
+	      	<br>
+	      	<br>
+	      	<br>
+	    	<div class="movie-paragraph">
+	    		<p>{{ object.summary }}</p>
+	    	</div>
+	    </div>
+	  </div>
+{% endblock content %}

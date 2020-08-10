@@ -1,0 +1,525 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: montserrat;
+	background: black;
+}
+
+/*nav bar*/
+
+nav {
+
+	background: #e1ad01;
+	height: 80px;
+	width: 100%;
+}
+
+label.logo {
+	color: white;
+	font-size: 35px;
+	line-height: 80px;
+	padding: 0 20px;
+	font-weight: bold;
+}
+
+nav ul {
+	float: right;
+	margin-right: 20px;
+}
+
+nav ul li {
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 5px;
+}
+
+nav ul li a{
+	color: white;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	text-transform: uppercase;
+}
+
+.nav-link:hover {
+	background: #fdc817;
+	transition: .5s;
+}
+
+.checkbtn {
+	font-size: 30px;
+	color: white;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+}
+
+#check {
+	display: none;	
+}
+
+@media (max-width: 952px) {
+	label.logo {
+		font-size: 30px;
+		padding-left: 50px;
+	}
+
+	nav ul li a {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 858px) {
+	.checkbtn {
+		display: block;
+	}
+
+	ul {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #927000;
+		top: 80px;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+	}
+
+	nav ul li {
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+
+	nav ul li a {
+		font-size: 20px;
+	}
+
+	.nav-link:hover {
+		background: none;
+		color: #fdc817; 
+	}
+
+	#check:checked ~ ul {
+		left: 0;
+	}
+
+}
+
+
+/*home page movie banner*/
+
+div.movies {
+	background: black;
+	text-align: center;
+}
+
+/*div.deck {
+	display: inline-block;
+}*/
+
+div ul.movies-main {
+	margin: 40px 70px 10px 70px;
+	display: inline-block;
+	overflow: auto;
+	border-color: #555555;
+	border-radius: 10px;
+	justify-content: center;
+	align-items: center;
+}
+
+div a img.main-page {
+	/*width: 9.59%;*/
+	width: 132.6297px;
+	height: 196.4032px;
+	margin: auto;
+}
+
+
+/*home sidebar*/
+
+.column {
+	float: left;
+	padding: 18px;
+
+}
+
+.left {
+	width: 1000px;
+}
+
+.right {
+	width: 300px;
+	margin: 70px 0px;
+	margin-right: 120px;
+	margin-left: 60px;
+}
+
+#posts {
+	background: white;
+	margin: 15px;
+	margin-left: 40px;
+	border-radius: 10px;
+}
+
+
+#sidebar {
+	background: white;
+	border-radius: 10px;
+	
+	
+}
+
+div div h2 {
+	text-align: center;
+	background: white;
+}
+
+ul.upcoming {
+	background: white;
+	text-align: center;
+	font-size: 16px;
+	margin-top: 5px;
+
+}
+
+div hr {
+	text-align: center;
+}
+
+div.side_content {
+	margin: 20px;
+}
+
+/*Latest Reviews - HOME*/
+
+div.media-body {
+	background: white;
+}
+
+h2.art-tit {
+	text-align: left;
+	margin: 10px;
+}
+
+div.article-metadata {
+	padding-bottom: 1px;
+  	margin-bottom: 4px;
+  	border-bottom: 1px solid #e3e3e3;
+  	margin: 10px;
+}
+
+.article-content {
+  white-space: pre-line;
+  margin: 10px;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+article.media {
+	margin: 60px;
+	margin-left: 125px;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	border-radius: 10px;
+}
+
+#latest-rev {
+	color: white;
+	margin: 60px;
+	margin-left: 125px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	letter-spacing: 2px;
+
+}
+
+img.article-img {
+	width: 40px;
+	height: 40px;
+	float: right;
+	margin-top: 10px;
+}
+
+/*Movies Page*/
+
+h1.movies-page {
+	color: white;
+}
+
+div.site-body {
+	/*background: yellow;*/
+	width: 1200px;
+	margin: auto;
+}
+
+
+
+/*browse by year nav*/
+
+ul.nav-yr {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	text-align: center;
+}
+
+li.nav-yr-contents {
+	margin: 50px;
+	font-size: 30px;
+}
+
+a.year-link {
+	margin: 30px;
+	color: white;
+	vertical-align: middle;
+}
+
+.year-link:hover {
+	font-size: 60px;
+	transition: .5s;
+	text-align: center;
+}
+
+.year-link:clicked {
+	font-weight: 15px;
+}
+
+/*pop movies - MOVIES*/
+
+section.pop-section {
+	margin-top: 100px;
+}
+
+section div h1 {
+	color: white;
+	font-size: 18px;
+	text-align: center;
+	margin-bottom: 20px;
+	letter-spacing: 2px;
+}
+
+ul.pop-movies {
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+li.pop-list {
+	display: inline;
+}
+
+img.pop-img {
+	width: 138.3px;
+	height: 204.8px;
+	margin: auto;
+}
+
+
+/*YEAR: movies*/
+
+ul.poster-list {
+    text-align: center;
+}
+
+li.list-img {
+	display: inline;
+
+}
+
+img.year-img {
+	width: 221.28px;
+	height: 327.68px;
+	margin: auto;
+}
+
+/*ABOUT*/
+
+#about-h1 {
+	color: white;
+}
+
+/*REGISTER*/
+
+.form-group {
+	flex: 0 0 auto;
+	flex-flow: row wrap;
+	align-items: center;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.border-bottom {
+	font-size: 1.2em !important;
+	font-weight: bold !important;
+	text-align: left !important;
+	margin-bottom: 4px;
+}
+
+.btn {
+	background-color: #e1ad01;
+	border: none;
+	color: white;
+	padding: 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.text-muted {
+	color: black;
+	opacity: 0.75;
+}
+
+fieldset p {
+	padding: 10px;
+}
+
+fieldset ul {
+	padding: 10px;
+}
+
+#register-div {
+	margin: 50px;
+}
+
+div.alert {
+	background-color: #a8d808;
+	margin: 50px;
+	width: 300px;
+	color: white;
+	margin-bottom: 20px;
+	margin-left: 140px;
+	border-radius: 5px;
+}
+
+/*PROFILE*/
+
+.rounded-circle {
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+}
+
+#profile-section {
+	margin: 50px;
+	width: 1000px;
+	display: inline-block;
+}
+
+.account-heading {
+	text-align: left;
+	float: left;
+	display: inline-block;
+	font-size: 42px;
+}
+
+
+#prof-text {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-right: 100px;
+}
+
+/*MOVIE_DETAIL*/
+
+img.movie_poster {
+	width: 331.92px;
+	height: 491.52px;
+	margin: auto;
+}
+
+#movie-section {
+	margin: 20px 70px;
+}
+
+div #movie-text {
+	display: inline-block;
+	vertical-align: top;
+	width: 700px;
+	height: 491.52px;
+	margin: auto;
+	margin-left:20px;
+}
+
+
+div.movie-paragraph {
+	margin-bottom: 10px;
+}
+
+h1.movie-heading {
+	font-size: 48px;
+}
+
+h3.director {
+	font-size: 24px;
+}
+
+p.add-info {
+	font-weight: 5px;
+	font-family: Montserrat Light;
+}
+
+br.movie-break {
+	margin: auto;
+}
+
+#cast {
+	color: #e1ad01;
+}
+
+/*page numbers*/
+
+
+a #page {
+	background-color: #e1ad01; 
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+a.btn-outline-info {
+	background-color: white; 
+	border: none;
+	color: #e1ad01;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	padding: 10px;
+}
+
+div.page-numbers {
+	margin-bottom: 20px;
+	margin-left: 50px;
+	text-align: center;
+}
+
+a.btn-info {
+	padding: 10px;
+}
